@@ -1,33 +1,38 @@
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#include <stdio.h>
+#include <stdlib.h>
 
-# Precompiled Headers
-*.gch
-*.pch
+int main()
+{
+    int sk,a=0,b=0,d=0,e=0;
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+    int cnt_a=1,cnt_b=1;
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+printf ("Parasykite skaiciu : ");
+scanf("%d", &sk);
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+while (sk != 0){
 
-# Debug files
-*.dSYM/
-*.su
+    if (sk%10 != 0){
+        a = a + (sk%10 * cnt_a);
+        cnt_a *= 10;
+    }
+     if (sk%10==0){
+        e++;
+     }
+
+     else if (sk%2==0){
+        d++;
+     }
+
+    if (sk%2==0){
+        b = b + (sk%10 * cnt_b);
+        cnt_b *= 10;
+
+    }
+
+    sk = sk/10;
+}
+printf(" Skaicius be nuliu : %d \n Skaicius be nelyginiu : %d \n Nuliu skaicius : %d\n Lyginiu skaitmenu skaicius : %d ", a , b, e, d);
+    return 0;
+}
+
